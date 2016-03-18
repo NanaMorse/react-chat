@@ -1,0 +1,62 @@
+$border : 1px solid #000
+
+$chatAreaWidth : 300px
+$chatAreaHeight : $chatAreaWidth * 1.68
+.chatMain
+  width: $chatAreaWidth
+  height: $chatAreaHeight
+  background: greenyellow
+  border: $border
+  margin-left: 10px
+
+$targetAreaHeight : $chatAreaHeight * 0.1
+.targetArea
+  height: $targetAreaHeight
+  background: blueviolet
+  .avatar
+    width: $chatAreaHeight * 0.08
+    margin-top: $targetAreaHeight * 0.1
+    margin-left: $targetAreaHeight * 0.1
+  .profile
+    display: inline-block
+
+$flowAreaHeight : $chatAreaHeight * 0.8
+.flowArea
+  height: $flowAreaHeight
+  background: darkcyan
+  p
+    margin-top: $flowAreaHeight * 0.02
+    margin-left: $chatAreaWidth * 0.01
+    margin-right: $chatAreaWidth * 0.01
+    height: 1.4em
+    line-height: 1.4em
+    padding: 0 $chatAreaWidth * 0.02
+    border-radius: $chatAreaWidth * 0.02
+    clear: both
+
+.hasSend
+  background: deepskyblue
+  float: right
+
+.hasReceive
+  background: snow
+  float: left
+
+$newMsgAreaHeight : $chatAreaHeight * 0.1
+.newMsgArea
+  height: $chatAreaHeight * 0.1
+  background: lightcoral
+
+.editIpt
+  border: none
+  outline: none
+  width: $chatAreaWidth * 0.8
+  height: $newMsgAreaHeight * 0.6
+  margin-top: $newMsgAreaHeight * 0.2
+  margin-left: $newMsgAreaHeight * 0.1
+
+.sendBtn
+  width: $chatAreaWidth * 0.16
+  height: $newMsgAreaHeight * 0.6
+
+

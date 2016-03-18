@@ -1,3 +1,55 @@
-body {
-    background: seagreen;
-}
+.chatMain {
+  width: 300px;
+  height: 504px;
+  background: greenyellow;
+  border: 1px solid #000;
+  margin-left: 10px; }
+
+.targetArea {
+  height: 50.4px;
+  background: blueviolet; }
+  .targetArea .avatar {
+    width: 40.32px;
+    margin-top: 5.04px;
+    margin-left: 5.04px; }
+  .targetArea .profile {
+    display: inline-block; }
+
+.flowArea {
+  height: 403.2px;
+  background: darkcyan; }
+  .flowArea p {
+    margin-top: 8.064px;
+    margin-left: 3px;
+    margin-right: 3px;
+    height: 1.4em;
+    line-height: 1.4em;
+    padding: 0 6px;
+    border-radius: 6px;
+    clear: both; }
+
+.hasSend {
+  background: deepskyblue;
+  float: right; }
+
+.hasReceive {
+  background: snow;
+  float: left; }
+
+.newMsgArea {
+  height: 50.4px;
+  background: lightcoral; }
+
+.editIpt {
+  border: none;
+  outline: none;
+  width: 240px;
+  height: 30.24px;
+  margin-top: 10.08px;
+  margin-left: 5.04px; }
+
+.sendBtn {
+  width: 48px;
+  height: 30.24px; }
+
+/*# sourceMappingURL=main.css.map */

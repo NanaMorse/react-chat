@@ -6,10 +6,23 @@ require('../css/main.css');
 
 var React  = require('react');
 var ReactDom = require('react-dom');
-var Hello = require('./components/Hello');
-
 var container = document.getElementById('container');
 
+var TargetArea = require('./components/TargetArea');
+var FlowArea = require('./components/FlowArea');
+var NewMsgArea = require('./components/NewMsgArea');
 
 
-ReactDom.render(<Hello name='morse'/>, container);
+var ChatApp = React.createClass({
+  render : function(){
+    return (
+      <div className="chatMain">
+        <TargetArea />
+        <FlowArea />
+        <NewMsgArea />
+      </div>
+    );
+  }
+});
+
+ReactDom.render(<ChatApp />, container);
