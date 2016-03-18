@@ -17,11 +17,12 @@
 
 .flowArea {
   height: 403.2px;
-  background: darkcyan; }
+  background: darkcyan;
+  overflow: auto; }
   .flowArea p {
     margin-top: 8.064px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 6px;
+    margin-right: 6px;
     height: 1.4em;
     line-height: 1.4em;
     padding: 0 6px;
@@ -47,9 +48,5 @@
   height: 30.24px;
   margin-top: 10.08px;
   margin-left: 5.04px; }
-
-.sendBtn {
-  width: 48px;
-  height: 30.24px; }
 
 /*# sourceMappingURL=main.css.map */
