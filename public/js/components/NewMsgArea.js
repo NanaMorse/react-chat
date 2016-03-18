@@ -4,6 +4,7 @@
 var React  = require('react');
 var eventEmitter = require('wolfy87-eventemitter');
 
+
 module.exports = React.createClass({
   getInitialState: function() {
     return { newMsg : '' };

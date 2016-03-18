@@ -5,10 +5,20 @@
 'use strict';
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 let PORT = 3000;
 
 app.use(express.static('public'));
 
-app.listen(PORT);
-console.log('Server has started on port 3000!');
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg, 'hasReceive');
+  });
+});
+
+http.listen(PORT, function(){
+  console.log('listening on *:' + PORT);
+});

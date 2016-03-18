@@ -3,6 +3,8 @@
  */
 var React  = require('react');
 var eventEmitter = require('wolfy87-eventemitter');
+var socket = require('../managers/socket');
+
 
 var MsgList = React.createClass({
   render : function(){
@@ -22,6 +24,7 @@ module.exports = React.createClass({
 
   componentDidMount : function(){
     eventEmitter.on('sendMsg', this.onNewMsg);
+    socket.on('chat message', this.onNewMsg);
   },
 
   onNewMsg : function(msg, className){
@@ -30,6 +33,7 @@ module.exports = React.createClass({
       className : className,
       id : Date.now()
     });
+    (className === 'hasSend') && socket.emit('chat message', msg);
     this.setState({ flows : nextFlows });
   },
 
