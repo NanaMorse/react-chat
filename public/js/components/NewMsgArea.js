@@ -2,8 +2,7 @@
  * Created by nana on 16/3/18.
  */
 var React  = require('react');
-var eventEmitter = require('wolfy87-eventemitter');
-
+var eventEmitter = require('../managers/eventEmitter');
 
 module.exports = React.createClass({
   getInitialState: function() {

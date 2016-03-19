@@ -14,8 +14,8 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg, 'hasReceive');
+  socket.on('sendMsg', function(msg){
+    socket.broadcast.emit('receiveMsg', msg, 'hasReceive');
   });
 });
 

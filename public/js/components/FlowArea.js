@@ -2,7 +2,7 @@
  * Created by nana on 16/3/18.
  */
 var React  = require('react');
-var eventEmitter = require('wolfy87-eventemitter');
+var eventEmitter = require('../managers/eventEmitter');
 var socket = require('../managers/socket');
 
 
@@ -24,7 +24,7 @@ module.exports = React.createClass({
 
   componentDidMount : function(){
     eventEmitter.on('sendMsg', this.onNewMsg);
-    socket.on('chat message', this.onNewMsg);
+    socket.on('receiveMsg', this.onNewMsg);
   },
 
   onNewMsg : function(msg, className){
@@ -33,7 +33,7 @@ module.exports = React.createClass({
       className : className,
       id : Date.now()
     });
-    (className === 'hasSend') && socket.emit('chat message', msg);
+    (className === 'hasSend') && socket.emit('sendMsg', msg);
     this.setState({ flows : nextFlows });
   },
 

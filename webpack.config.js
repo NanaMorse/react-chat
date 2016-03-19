@@ -28,5 +28,7 @@ module.exports = {
         loader: 'style-loader!css-loader'
       }
     ]
-  }
+  },
+
+  devtool: "#eval"
 };
