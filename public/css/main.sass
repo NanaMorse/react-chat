@@ -1,13 +1,35 @@
 $border : 1px solid #000
 
-$chatAreaWidth : 300px
-$chatAreaHeight : $chatAreaWidth * 1.68
-.chatMain
-  width: $chatAreaWidth
-  height: $chatAreaHeight
+$chatAppWidth : 400px
+
+$chatAreaWidth : $chatAppWidth * (3/4)
+
+$chatAppHeight : $chatAreaWidth * 1.68
+
+$chatAreaHeight : $chatAppHeight
+.chatApp
+  width: $chatAppWidth
+  height: $chatAppHeight
   background: greenyellow
   border: $border
   margin-left: 10px
+
+.chatMain
+  width: $chatAreaWidth
+  float: left
+
+.memberListArea
+  width: $chatAppWidth * (1/4)
+  height: $chatAppHeight
+  float: left
+  background: seagreen
+  ul
+    list-style: none
+    margin: 0
+    padding: 0 0 0 10px
+    overflow: auto
+    li
+      margin-top: 5px
 
 $targetAreaHeight : $chatAreaHeight * 0.1
 .targetArea
@@ -20,7 +42,7 @@ $targetAreaHeight : $chatAreaHeight * 0.1
   .profile
     display: inline-block
 
-$flowAreaHeight : $chatAreaHeight * 0.8
+$flowAreaHeight : $chatAreaHeight * 0.9
 .flowArea
   height: $flowAreaHeight
   background: darkcyan
@@ -51,11 +73,17 @@ $newMsgAreaHeight : $chatAreaHeight * 0.1
 .editIpt
   border: none
   outline: none
-  width: $chatAreaWidth * 0.8
+  width: $chatAreaWidth * 0.75
   height: $newMsgAreaHeight * 0.6
   margin-top: $newMsgAreaHeight * 0.2
   margin-left: $newMsgAreaHeight * 0.1
 
-
-
+.loginArea
+  width: $chatAreaWidth
+  height: $chatAreaHeight
+  background: #008080
+  float: left
+  form
+    width: $chatAreaWidth * 0.9
+    margin: 0 auto
 
