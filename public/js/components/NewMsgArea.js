@@ -14,7 +14,7 @@ module.exports = React.createClass({
       <div className="newMsgArea">
         <form onSubmit={this.sendMsg}>
           <input type="text" className="editIpt" onChange={this.onChange} value={this.state.newMsg}/>
-          <button className="sendBtn">送出</button>
+          <button className="sendBtn">Send</button>
         </form>
       </div>
     );
