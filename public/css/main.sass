@@ -47,23 +47,26 @@ $flowAreaHeight : $chatAreaHeight * 0.9
   height: $flowAreaHeight
   background: darkcyan
   overflow: auto
-  p
+  div
     margin-top: $flowAreaHeight * 0.02
     margin-left: $chatAreaWidth * 0.02
     margin-right: $chatAreaWidth * 0.02
-    height: 1.4em
-    line-height: 1.4em
-    padding: 0 $chatAreaWidth * 0.02
-    border-radius: $chatAreaWidth * 0.02
     clear: both
+    p
+      height: 1.4em
+      line-height: 1.4em
+      padding: 0 $chatAreaWidth * 0.02
+      border-radius: $chatAreaWidth * 0.02
 
 .hasSend
-  background: deepskyblue
   float: right
+  .msg
+    background: deepskyblue
 
 .hasReceive
-  background: snow
   float: left
+  .msg
+    background: snow
 
 $newMsgAreaHeight : $chatAreaHeight * 0.1
 .newMsgArea

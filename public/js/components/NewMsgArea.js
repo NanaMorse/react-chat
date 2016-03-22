@@ -6,7 +6,14 @@ var eventEmitter = require('../managers/eventEmitter');
 
 module.exports = React.createClass({
   getInitialState: function() {
-    return { newMsg : '' };
+    return {
+      newMsg : '',
+      userName : ''
+    };
+  },
+
+  componentDidMount : function () {
+    eventEmitter.on('loginSuccess', this.onLoginSuccess);
   },
 
   render : function(){
@@ -26,12 +33,17 @@ module.exports = React.createClass({
 
   sendMsg : function(e){
     e.preventDefault();
-    var newMsg = this.state.newMsg;
+    var state = this.state;
+    var newMsg = state.newMsg;
     if(!newMsg) return;
 
-    eventEmitter.trigger('sendMsg', [this.state.newMsg, 'hasSend']);
+    eventEmitter.trigger('sendMsg', [state.userName, newMsg, 'hasSend']);
 
     newMsg = '';
     this.setState({ newMsg : newMsg });
+  },
+
+  onLoginSuccess : function (name) {
+    this.setState({ userName : name });
   }
 });

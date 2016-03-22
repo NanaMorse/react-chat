@@ -14,8 +14,8 @@ app.use(express.static('public'));
 
 
 io.on('connection', function(socket){
-  socket.on('sendMsg', function(msg){
-    socket.broadcast.emit('receiveMsg', msg, 'hasReceive');
+  socket.on('sendMsg', function(from, msg){
+    socket.broadcast.emit('receiveMsg', from ,msg, 'hasReceive');
   });
 });
 

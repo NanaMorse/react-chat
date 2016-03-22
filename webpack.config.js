@@ -30,5 +30,5 @@ module.exports = {
     ]
   },
 
-  devtool: "#eval"
+  devtool: "#cheap-module-eval-source-map"
 };

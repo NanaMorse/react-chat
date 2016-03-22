@@ -36,23 +36,26 @@
   height: 453.6px;
   background: darkcyan;
   overflow: auto; }
-  .flowArea p {
+  .flowArea div {
     margin-top: 9.072px;
     margin-left: 6px;
     margin-right: 6px;
-    height: 1.4em;
-    line-height: 1.4em;
-    padding: 0 6px;
-    border-radius: 6px;
     clear: both; }
+    .flowArea div p {
+      height: 1.4em;
+      line-height: 1.4em;
+      padding: 0 6px;
+      border-radius: 6px; }
 
 .hasSend {
-  background: deepskyblue;
   float: right; }
+  .hasSend .msg {
+    background: deepskyblue; }
 
 .hasReceive {
-  background: snow;
   float: left; }
+  .hasReceive .msg {
+    background: snow; }
 
 .newMsgArea {
   height: 50.4px;
