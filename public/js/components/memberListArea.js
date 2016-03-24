@@ -3,6 +3,7 @@
  */
 var React  = require('react');
 var eventEmitter = require('../managers/eventEmitter');
+var socket = require('../managers/socket');
 
 var MemberList = React.createClass({
   render : function(){
@@ -22,6 +23,7 @@ module.exports = React.createClass({
 
   componentDidMount : function(){
     eventEmitter.on('loginSuccess', this.onLoginSuccess);
+    socket.on('otherLogin', this.onOtherLogin);
   },
 
   onLoginSuccess : function(name){
@@ -30,6 +32,16 @@ module.exports = React.createClass({
       id : Date.now()
     });
     this.setState({ members : this.state.members });
+    
+    socket.emit('loginSuccess', name);
+  },
+
+  onOtherLogin : function (name) {
+    this.state.members.push({
+      name : name,
+      id : Date.now()
+    });
+    this.setState({ members : this.state.members});
   },
 
   render : function() {
